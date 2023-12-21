@@ -1,8 +1,8 @@
 {
-  "name": "webpack-concat-plugin",
+  "name": "webpack-concat-plugin-with-optional-errors",
   "version": "3.0.0",
-  "author": "huangxueliang",
-  "description": "Webpack file concatenation.",
+  "author": "Mark Chambers",
+  "description": "webpack-concat-plugin Webpack file concatenation, but with optional errors thrown.",
   "license": "ISC",
   "main": "./release.js",
   "scripts": {
@@ -32,13 +32,10 @@
   "peerDependencies": {
     "webpack": "^4.0.1"
   },
-  "engines": {
-    "node": ">= 4.8 < 5.0.0 || >= 5.10"
-  },
-  "homepage": "https://github.com/hxlniada/webpack-concat-plugin",
+  "homepage": "https://github.com/marksy/webpack-concat-plugin",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxlniada/webpack-concat-plugin.git"
+    "url": "git+https://github.com/marksy/webpack-concat-plugin.git"
   },
   "bugs": {
     "url": "https://github.com/hxlniada/webpack-concat-plugin/issues"

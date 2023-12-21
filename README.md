@@ -1,4 +1,4 @@
-# webpack-concat-plugin
+# A fork of [webpack-concat-plugin](https://github.com/hxlniada/webpack-concat-plugin) that has the option to throw errors.
 
 [![Build Status](https://img.shields.io/travis/hxlniada/webpack-concat-plugin.svg)](https://travis-ci.org/hxlniada/webpack-concat-plugin)
 [![npm package](https://img.shields.io/npm/v/webpack-concat-plugin.svg)](https://www.npmjs.org/package/webpack-concat-plugin)
@@ -10,14 +10,22 @@
 
 Webpack is really powerful. However, when I want to concat the static files and inject into html without webpack JSONP code wrapper, it seems impossible to do that without other tool's help.
 
+### Why is it forked?
+
+I want to be able to throw errors when there's an error in the `webpack-concat-plugin`. Currently, it only logs an error. This allows a process to exit with `0`, even if there's an error concatenating.
+
+An example is if the `webpack-concat-plugin` attempts to concatenate es6 syntax, it will display a console error but exit successfully.
+
 ### Install
 
+#### npm
 ```
-npm install webpack-concat-plugin --save-dev
+npm install webpack-concat-plugin-with-optional-errors --save-dev
 ```
-for webpack >= 4.0
+
+#### yarn
 ```
-npm install webpack-concat-plugin@3.0.0 --save-dev
+yarn add webpack-concat-plugin-with-optional-errors --dev
 ```
 
 ### Features
@@ -33,6 +41,7 @@ const ConcatPlugin = require('webpack-concat-plugin');
 new ConcatPlugin({
     ...see options
     // examples
+    throwErrors: false, // set this to `true` to exit with 1 on errors
     uglify: false,
     sourceMap: false,
     name: 'result',
@@ -47,6 +56,9 @@ new ConcatPlugin({
 ```
 
 ### Options
+
+#### throwErrors [boolean] default: false
+if an error is caught, this will exit with 1 rather than 0
 
 #### uglify [boolean | object] default: false
 if true the output file will be uglified
@@ -92,7 +104,4 @@ doctype html
 ...
 ```
 
-### TODO
 
-- [ ] add css support
-- [x] auto inject to html
