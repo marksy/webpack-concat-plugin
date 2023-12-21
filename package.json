@@ -1,6 +1,6 @@
 {
   "name": "webpack-concat-plugin-with-optional-errors",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Mark Chambers",
   "description": "webpack-concat-plugin Webpack file concatenation, but with optional errors thrown.",
   "license": "ISC",
