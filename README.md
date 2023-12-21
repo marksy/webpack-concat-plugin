@@ -12,18 +12,20 @@ Webpack is really powerful. However, when I want to concat the static files and 
 
 ### Why is it forked?
 
-I want to be able to throw errors when there's an error in the webpack-concat-plugin. Currently, it only logs an error. This allows a process to exit with 0, even if there's an error concatenating.
+I want to be able to throw errors when there's an error in the `webpack-concat-plugin`. Currently, it only logs an error. This allows a process to exit with `0`, even if there's an error concatenating.
 
-An example is if the webpack-concat-plugin attempts to concatenate es6 syntax, it will display a console error but exit successfully.
+An example is if the `webpack-concat-plugin` attempts to concatenate es6 syntax, it will display a console error but exit successfully.
 
 ### Install
 
+#### npm
 ```
-npm install webpack-concat-plugin --save-dev
+npm install webpack-concat-plugin-with-optional-errors --save-dev
 ```
-for webpack >= 4.0
+
+#### yarn
 ```
-npm install webpack-concat-plugin@3.0.0 --save-dev
+yarn add webpack-concat-plugin-with-optional-errors --dev
 ```
 
 ### Features
@@ -102,7 +104,4 @@ doctype html
 ...
 ```
 
-### TODO
 
-- [ ] add css support
-- [x] auto inject to html
