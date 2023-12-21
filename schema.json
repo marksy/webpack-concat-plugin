@@ -2,6 +2,9 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
+        "throwErrors": {
+            "type": "boolean"
+        },
         "uglify": {
             "anyOf": [
                 {"type": "object"},

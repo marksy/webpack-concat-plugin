@@ -20,7 +20,8 @@ class ConcatPlugin {
             fileName: '[name].js',
             name: 'result',
             injectType: 'prepend',
-            outputPath: ''
+            outputPath: '',
+            throwErrors: false,
         }, options);
 
         if (!options.filesToConcat || !options.filesToConcat.length) {
@@ -108,6 +109,7 @@ class ConcatPlugin {
             )
             .catch(e => {
                 console.error(e);
+                if (this.settings.throwErrors) throw new Error('Concat error');
             });
     }
 
@@ -141,6 +143,7 @@ class ConcatPlugin {
                         ))
                     ).catch(e => {
                         console.error(e);
+                        if (this.settings.throwErrors) throw new Error('Concat error');
                     })
                 );
             });
@@ -167,6 +170,7 @@ class ConcatPlugin {
                     ))
                 ).catch(e => {
                     console.error(e);
+                    if (this.settings.throwErrors) throw new Error('Concat error');
                 });
         };
 
@@ -293,6 +297,7 @@ class ConcatPlugin {
                 });
             }).catch(e => {
                 console.error(e);
+                if (this.settings.throwErrors) throw new Error('Concat error');
             });
         };
 
